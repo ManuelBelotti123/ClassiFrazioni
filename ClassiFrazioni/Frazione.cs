@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ClassiFrazioni
 {
@@ -55,6 +56,23 @@ namespace ClassiFrazioni
         public object Clone()
         {
             return this.MemberwiseClone();
+        }
+
+        //metodi
+        public void Semplifica()
+        {
+            //MCD
+            int n = 2;
+            int i = 0;
+            int[] arr = new int[10];
+            while (this.Numeratore != 1)
+            {
+                while (this.Numeratore % n == 0)
+                {
+                    this.Numeratore = this.Numeratore / n;
+                }
+                n++;
+            }
         }
     }
 }

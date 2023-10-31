@@ -12,14 +12,22 @@ namespace ClassiFrazioni
 {
     public partial class Form1 : Form
     {
+        Frazione fr;
+
         public Form1()
         {
+            fr = new Frazione(30, 5);
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fr.Semplifica();
         }
     }
 }
