@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassiFrazioni
 {
-    internal class Frazione
+    internal class Frazione : ICloneable
     {
         //attributi
         private int _numeratore;
@@ -49,6 +49,12 @@ namespace ClassiFrazioni
                     _denominatore = 0;
                 }
             }
+        }
+
+        //metodo clone
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }
