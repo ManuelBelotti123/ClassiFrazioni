@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -64,15 +65,74 @@ namespace ClassiFrazioni
             //MCD
             int n = 2;
             int i = 0;
-            int[] arr = new int[10];
-            while (this.Numeratore != 1)
+            int[] arr = new int[10000000];
+            int[] arr1 = new int[10000000];
+            int MCD = 0;
+            int num = this.Numeratore;
+            int denom = this.Denominatore;
+            while (num != 1)
             {
-                while (this.Numeratore % n == 0)
+                while (num % n == 0)
                 {
-                    this.Numeratore = this.Numeratore / n;
+                    num = num / n;
+                    arr[i] = n;
+                    i++;
                 }
                 n++;
             }
+            i = 0;
+            while (denom != 1)
+            {
+                while (denom % n == 0)
+                {
+                    denom = denom / n;
+                    arr1[i] = n;
+                    i++;
+                }
+                n++;
+            }
+            //confronto scomposizioni
+            for (int j = 0; j < 10; j++)
+            {
+                for (int k = 0; k < 10; k++)
+                {
+                    if (arr[j] == arr1[k] && MCD < arr[j])
+                    {
+                        MCD = arr[j];
+                    }
+                }
+            }
+            //semplificazione
+            this.Numeratore = this.Numeratore / MCD;
+            this.Denominatore = this.Denominatore / MCD;
+        }
+        public Frazione Somma(Frazione fr)
+        {
+            Frazione f = new Frazione();
+            f.Denominatore = fr.Denominatore * this.Denominatore;
+            f.Numeratore = fr.Numeratore * this.Denominatore + this.Numeratore * fr.Denominatore;
+            return f;
+        }
+        public Frazione Sottrai(Frazione fr)
+        {
+            Frazione f = new Frazione();
+            f.Denominatore = fr.Denominatore * this.Denominatore;
+            f.Numeratore = fr.Numeratore * this.Denominatore - this.Numeratore * fr.Denominatore;
+            return f;
+        }
+        public Frazione Moltiplica(Frazione fr)
+        {
+            Frazione f = new Frazione();
+            f.Denominatore = fr.Denominatore * this.Denominatore;
+            f.Numeratore = fr.Numeratore * this.Numeratore;
+            return f;
+        }
+        public Frazione Dividi(Frazione fr)
+        {
+            Frazione f = new Frazione();
+            f.Denominatore = fr.Denominatore * this.Numeratore;
+            f.Numeratore = fr.Numeratore * this.Denominatore;
+            return f;
         }
     }
 }
