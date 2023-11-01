@@ -16,7 +16,7 @@ namespace ClassiFrazioni
 
         public Form1()
         {
-            fr = new Frazione(3, 5);
+            fr = new Frazione(100, 50);
             InitializeComponent();
         }
 
@@ -28,7 +28,7 @@ namespace ClassiFrazioni
         private void button1_Click(object sender, EventArgs e)
         {
             Frazione fr1 = new Frazione(4, 9);
-            fr = fr.Somma(fr1);
+            fr.Semplifica();
             MessageBox.Show(fr.Formato(fr), "Avviso");
         }
     }
