@@ -113,26 +113,6 @@ namespace ClassiFrazioni
             f.Numeratore = fr.Numeratore * this.Denominatore + this.Numeratore * fr.Denominatore;
             return f;
         }
-        public Frazione Sottrai(Frazione fr)
-        {
-            Frazione f = new Frazione();
-            f.Denominatore = fr.Denominatore * this.Denominatore;
-            f.Numeratore = fr.Numeratore * this.Denominatore - this.Numeratore * fr.Denominatore;
-            return f;
-        }
-        public Frazione Moltiplica(Frazione fr)
-        {
-            Frazione f = new Frazione();
-            f.Denominatore = fr.Denominatore * this.Denominatore;
-            f.Numeratore = fr.Numeratore * this.Numeratore;
-            return f;
-        }
-        public Frazione Dividi(Frazione fr)
-        {
-            Frazione f = new Frazione();
-            f.Denominatore = fr.Denominatore * this.Numeratore;
-            f.Numeratore = fr.Numeratore * this.Denominatore;
-            return f;
-        }
+
     }
 }
