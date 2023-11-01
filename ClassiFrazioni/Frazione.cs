@@ -127,6 +127,12 @@ namespace ClassiFrazioni
             f.Numeratore = fr.Numeratore * this.Numeratore;
             return f;
         }
-
+        public Frazione Dividi(Frazione fr)
+        {
+            Frazione f = new Frazione();
+            f.Denominatore = fr.Denominatore * this.Numeratore;
+            f.Numeratore = fr.Numeratore * this.Denominatore;
+            return f;
+        }
     }
 }
