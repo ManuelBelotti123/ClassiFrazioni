@@ -29,7 +29,7 @@ namespace ClassiFrazioni
         {
             Frazione fr1 = new Frazione(4, 9);
             fr = fr.Somma(fr1);
-            MessageBox.Show(fr.Numeratore.ToString() + fr.Denominatore.ToString(), "Avviso");
+            MessageBox.Show(fr.Formato(fr), "Avviso");
         }
     }
 }

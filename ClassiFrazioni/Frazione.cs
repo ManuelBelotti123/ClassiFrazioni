@@ -134,5 +134,9 @@ namespace ClassiFrazioni
             f.Numeratore = fr.Numeratore * this.Denominatore;
             return f;
         }
+        public string Formato(Frazione fr)
+        {
+            return fr.Numeratore + "/" + fr.Denominatore;
+        }
     }
 }
