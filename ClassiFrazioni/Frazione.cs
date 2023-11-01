@@ -60,19 +60,24 @@ namespace ClassiFrazioni
         }
 
         //metodi
-        public void Semplifica()
+        public Frazione Semplifica(Frazione fr)
         {
-            //MCD
             int n = 2;
-            while(this.Numeratore > n && this.Denominatore > n)
+            while(fr.Numeratore > n || fr.Denominatore > n)
             {
-                while (this.Numeratore % n == 0 && this.Denominatore % n == 0)
+                while (fr.Numeratore % n == 0 && fr.Denominatore % n == 0)
                 {
-                    this.Numeratore = this.Numeratore / n;
-                    this.Denominatore = this.Denominatore / n;
+                    fr.Numeratore = fr.Numeratore / n;
+                    fr.Denominatore = fr.Denominatore / n;
                 }
                 n++;
             }
+            if (fr.Numeratore == fr.Denominatore)
+            {
+                fr.Numeratore = 1;
+                fr.Denominatore = 1;
+            }
+            return fr;
         }
         public Frazione Somma(Frazione fr)
         {

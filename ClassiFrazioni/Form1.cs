@@ -13,10 +13,10 @@ namespace ClassiFrazioni
     public partial class Form1 : Form
     {
         Frazione fr;
+        Frazione fr1;
 
         public Form1()
         {
-            fr = new Frazione(100, 50);
             InitializeComponent();
         }
 
@@ -25,11 +25,43 @@ namespace ClassiFrazioni
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void sempl_Click(object sender, EventArgs e)
         {
-            Frazione fr1 = new Frazione(4, 9);
-            fr.Semplifica();
-            MessageBox.Show(fr.Formato(fr), "Avviso");
+            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr = fr.Semplifica(fr);
+            ristext.Text = fr.Formato(fr);
+        }
+
+        private void somm_Click(object sender, EventArgs e)
+        {
+            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = fr.Semplifica(fr.Somma(fr1));
+            ristext.Text = fr.Formato(fr);
+        }
+
+        private void sottr_Click(object sender, EventArgs e)
+        {
+            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = fr.Semplifica(fr.Sottrai(fr1));
+            ristext.Text = fr.Formato(fr);
+        }
+
+        private void molt_Click(object sender, EventArgs e)
+        {
+            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = fr.Semplifica(fr.Moltiplica(fr1));
+            ristext.Text = fr.Formato(fr);
+        }
+
+        private void divisione_Click(object sender, EventArgs e)
+        {
+            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = fr.Semplifica(fr.Dividi(fr1));
+            ristext.Text = fr.Formato(fr);
         }
     }
 }
