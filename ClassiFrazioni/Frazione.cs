@@ -11,8 +11,8 @@ namespace ClassiFrazioni
     internal class Frazione : ICloneable
     {
         //attributi
-        private int _numeratore;
-        private int _denominatore;
+        protected int _numeratore;
+        protected int _denominatore;
 
         //costruttori
         public Frazione()
