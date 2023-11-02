@@ -46,15 +46,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.ristext = new System.Windows.Forms.TextBox();
             this.sempl = new System.Windows.Forms.Button();
+            this.Vdec = new System.Windows.Forms.Button();
+            this.Vfraz = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numdec = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rondalo", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 38);
+            this.label1.Size = new System.Drawing.Size(315, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Operazioni Frazioni";
             // 
@@ -219,11 +223,54 @@
             this.sempl.UseVisualStyleBackColor = true;
             this.sempl.Click += new System.EventHandler(this.sempl_Click);
             // 
+            // Vdec
+            // 
+            this.Vdec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Vdec.Location = new System.Drawing.Point(292, 333);
+            this.Vdec.Name = "Vdec";
+            this.Vdec.Size = new System.Drawing.Size(266, 40);
+            this.Vdec.TabIndex = 25;
+            this.Vdec.Text = "Decimale";
+            this.Vdec.UseVisualStyleBackColor = true;
+            this.Vdec.Click += new System.EventHandler(this.Vdec_Click);
+            // 
+            // Vfraz
+            // 
+            this.Vfraz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Vfraz.Location = new System.Drawing.Point(292, 379);
+            this.Vfraz.Name = "Vfraz";
+            this.Vfraz.Size = new System.Drawing.Size(266, 40);
+            this.Vfraz.TabIndex = 26;
+            this.Vfraz.Text = "Frazione";
+            this.Vfraz.UseVisualStyleBackColor = true;
+            this.Vfraz.Click += new System.EventHandler(this.Vfraz_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(592, 327);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Numero decimale";
+            // 
+            // numdec
+            // 
+            this.numdec.Location = new System.Drawing.Point(592, 346);
+            this.numdec.Multiline = true;
+            this.numdec.Name = "numdec";
+            this.numdec.Size = new System.Drawing.Size(105, 27);
+            this.numdec.TabIndex = 27;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.numdec);
+            this.Controls.Add(this.Vfraz);
+            this.Controls.Add(this.Vdec);
             this.Controls.Add(this.sempl);
             this.Controls.Add(this.ristext);
             this.Controls.Add(this.label8);
@@ -270,6 +317,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox ristext;
         private System.Windows.Forms.Button sempl;
+        private System.Windows.Forms.Button Vdec;
+        private System.Windows.Forms.Button Vfraz;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox numdec;
     }
 }
 

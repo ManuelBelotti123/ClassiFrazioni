@@ -63,5 +63,18 @@ namespace ClassiFrazioni
             fr = fr.Semplifica(fr.Dividi(fr1));
             ristext.Text = fr.Formato(fr);
         }
+
+        private void Vdec_Click(object sender, EventArgs e)
+        {
+            fr = new FrazioneEstesa(int.Parse(num1.Text), int.Parse(den1.Text));
+            ristext.Text = fr.VDecimale(fr).ToString();
+        }
+
+        private void Vfraz_Click(object sender, EventArgs e)
+        {
+            fr = new FrazioneEstesa();
+            fr = fr.VFrazione(double.Parse(numdec.Text));
+            ristext.Text = fr.Formato(fr);
+        }
     }
 }

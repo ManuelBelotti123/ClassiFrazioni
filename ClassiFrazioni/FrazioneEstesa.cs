@@ -80,7 +80,9 @@ namespace ClassiFrazioni
         //metodi aggiuntivi
         public double VDecimale(FrazioneEstesa fr)
         {
-            return fr.Numeratore / fr.Denominatore;
+            double n = fr.Numeratore;
+            double d = fr.Denominatore;
+            return n / d;
         }
         public FrazioneEstesa VFrazione(double v)
         {
@@ -88,6 +90,10 @@ namespace ClassiFrazioni
             string n = v.ToString();
             string[] div = n.Split(',');
             int len = div[1].Length;
+            if (div[0] != "0")
+            {
+                div[1] = div[0] + div[1];
+            }
             f.Numeratore = int.Parse(div[1]);
             string den = "1";
             for (int i = 0; i < len; i++)
