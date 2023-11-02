@@ -9,20 +9,72 @@ namespace ClassiFrazioni
     internal class FrazioneEstesa : Frazione
     {
         //costruttori
-        public FrazioneEstesa()
+        public FrazioneEstesa() : base()
         {
-            base.Numeratore = 0;
-            base.Denominatore = 0;
+            Numeratore = 0;
+            Denominatore = 0;
         }
-        public FrazioneEstesa(int num, int den)
+        public FrazioneEstesa(int num, int den) : base(num, den)
         {
-            base.Numeratore = num;
-            base.Denominatore = den;
+            Numeratore = num;
+            Denominatore = den;
         }
-        public FrazioneEstesa(FrazioneEstesa frprec)
+        public FrazioneEstesa(FrazioneEstesa frprec) : base(frprec)
         {
-            base.Numeratore = frprec.Numeratore;
-            base.Denominatore = frprec.Denominatore;
+            Numeratore = frprec.Numeratore;
+            Denominatore = frprec.Denominatore;
+        }
+        //metodi overloading
+        public FrazioneEstesa Semplifica(FrazioneEstesa fr)
+        {
+            int n = 2;
+            while (fr.Numeratore > n || fr.Denominatore > n)
+            {
+                while (fr.Numeratore % n == 0 && fr.Denominatore % n == 0)
+                {
+                    fr.Numeratore = fr.Numeratore / n;
+                    fr.Denominatore = fr.Denominatore / n;
+                }
+                n++;
+            }
+            if (fr.Numeratore == fr.Denominatore)
+            {
+                fr.Numeratore = 1;
+                fr.Denominatore = 1;
+            }
+            return fr;
+        }
+        public FrazioneEstesa Somma(FrazioneEstesa fr)
+        {
+            FrazioneEstesa f = new FrazioneEstesa();
+            f.Denominatore = fr.Denominatore * this.Denominatore;
+            f.Numeratore = fr.Numeratore * this.Denominatore + this.Numeratore * fr.Denominatore;
+            return f;
+        }
+        public FrazioneEstesa Sottrai(FrazioneEstesa fr)
+        {
+            FrazioneEstesa f = new FrazioneEstesa();
+            f.Denominatore = fr.Denominatore * this.Denominatore;
+            f.Numeratore = fr.Numeratore * this.Denominatore - this.Numeratore * fr.Denominatore;
+            return f;
+        }
+        public FrazioneEstesa Moltiplica(FrazioneEstesa fr)
+        {
+            FrazioneEstesa f = new FrazioneEstesa();
+            f.Denominatore = fr.Denominatore * this.Denominatore;
+            f.Numeratore = fr.Numeratore * this.Numeratore;
+            return f;
+        }
+        public FrazioneEstesa Dividi(FrazioneEstesa fr)
+        {
+            FrazioneEstesa f = new FrazioneEstesa();
+            f.Denominatore = fr.Denominatore * this.Numeratore;
+            f.Numeratore = fr.Numeratore * this.Denominatore;
+            return f;
+        }
+        public string Formato(FrazioneEstesa fr)
+        {
+            return fr.Numeratore + "/" + fr.Denominatore;
         }
 
         //metodi aggiuntivi
@@ -30,7 +82,21 @@ namespace ClassiFrazioni
         {
             return fr.Numeratore / fr.Denominatore;
         }
-
+        public FrazioneEstesa VFrazione(double v)
+        {
+            FrazioneEstesa f = new FrazioneEstesa();
+            string n = v.ToString();
+            string[] div = n.Split(',');
+            int len = div[1].Length;
+            f.Numeratore = int.Parse(div[1]);
+            string den = "1";
+            for (int i = 0; i < len; i++)
+            {
+                den += "0";
+            }
+            f.Denominatore = int.Parse(den);
+            return f;
+        }
 
     }
 }

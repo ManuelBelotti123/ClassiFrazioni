@@ -12,8 +12,8 @@ namespace ClassiFrazioni
 {
     public partial class Form1 : Form
     {
-        Frazione fr;
-        Frazione fr1;
+        FrazioneEstesa fr;
+        FrazioneEstesa fr1;
 
         public Form1()
         {
@@ -27,39 +27,39 @@ namespace ClassiFrazioni
 
         private void sempl_Click(object sender, EventArgs e)
         {
-            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr = new FrazioneEstesa(int.Parse(num1.Text), int.Parse(den1.Text));
             fr = fr.Semplifica(fr);
             ristext.Text = fr.Formato(fr);
         }
 
         private void somm_Click(object sender, EventArgs e)
         {
-            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
-            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = new FrazioneEstesa(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new FrazioneEstesa(int.Parse(num2.Text), int.Parse(den2.Text));
             fr = fr.Semplifica(fr.Somma(fr1));
             ristext.Text = fr.Formato(fr);
         }
 
         private void sottr_Click(object sender, EventArgs e)
         {
-            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
-            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = new FrazioneEstesa(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new FrazioneEstesa(int.Parse(num2.Text), int.Parse(den2.Text));
             fr = fr.Semplifica(fr.Sottrai(fr1));
             ristext.Text = fr.Formato(fr);
         }
 
         private void molt_Click(object sender, EventArgs e)
         {
-            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
-            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = new FrazioneEstesa(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new FrazioneEstesa(int.Parse(num2.Text), int.Parse(den2.Text));
             fr = fr.Semplifica(fr.Moltiplica(fr1));
             ristext.Text = fr.Formato(fr);
         }
 
         private void divisione_Click(object sender, EventArgs e)
         {
-            fr = new Frazione(int.Parse(num1.Text), int.Parse(den1.Text));
-            fr1 = new Frazione(int.Parse(num2.Text), int.Parse(den2.Text));
+            fr = new FrazioneEstesa(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr1 = new FrazioneEstesa(int.Parse(num2.Text), int.Parse(den2.Text));
             fr = fr.Semplifica(fr.Dividi(fr1));
             ristext.Text = fr.Formato(fr);
         }
