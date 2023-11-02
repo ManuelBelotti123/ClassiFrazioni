@@ -50,6 +50,9 @@
             this.Vfraz = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.numdec = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.espnum = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -197,7 +200,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(457, 137);
+            this.label8.Location = new System.Drawing.Point(519, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 13);
             this.label8.TabIndex = 22;
@@ -206,7 +209,7 @@
             // ristext
             // 
             this.ristext.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ristext.Location = new System.Drawing.Point(460, 153);
+            this.ristext.Location = new System.Drawing.Point(522, 90);
             this.ristext.Multiline = true;
             this.ristext.Name = "ristext";
             this.ristext.Size = new System.Drawing.Size(159, 128);
@@ -248,7 +251,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(592, 327);
+            this.label9.Location = new System.Drawing.Point(591, 340);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 13);
             this.label9.TabIndex = 28;
@@ -256,17 +259,48 @@
             // 
             // numdec
             // 
-            this.numdec.Location = new System.Drawing.Point(592, 346);
+            this.numdec.Location = new System.Drawing.Point(591, 359);
             this.numdec.Multiline = true;
             this.numdec.Name = "numdec";
             this.numdec.Size = new System.Drawing.Size(105, 27);
             this.numdec.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(292, 287);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(266, 40);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Potenza";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // espnum
+            // 
+            this.espnum.Location = new System.Drawing.Point(591, 298);
+            this.espnum.Multiline = true;
+            this.espnum.Name = "espnum";
+            this.espnum.Size = new System.Drawing.Size(105, 27);
+            this.espnum.TabIndex = 30;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(588, 282);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Esponente";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.espnum);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.numdec);
             this.Controls.Add(this.Vfraz);
@@ -321,6 +355,9 @@
         private System.Windows.Forms.Button Vfraz;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox numdec;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox espnum;
+        private System.Windows.Forms.Label label10;
     }
 }
 

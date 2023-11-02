@@ -103,6 +103,13 @@ namespace ClassiFrazioni
             f.Denominatore = int.Parse(den);
             return f;
         }
+        public FrazioneEstesa Potenza(FrazioneEstesa fr, int esp)
+        {
+            FrazioneEstesa f = new FrazioneEstesa();
+            f.Numeratore = fr.Numeratore ^ esp;
+            f.Denominatore = fr.Denominatore ^ esp;
+            return f;
+        }
 
     }
 }

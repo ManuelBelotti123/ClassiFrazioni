@@ -76,5 +76,12 @@ namespace ClassiFrazioni
             fr = fr.VFrazione(double.Parse(numdec.Text));
             ristext.Text = fr.Formato(fr);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fr = new FrazioneEstesa(int.Parse(num1.Text), int.Parse(den1.Text));
+            fr = fr.Potenza(fr, int.Parse(espnum.Text));
+            ristext.Text = fr.Formato(fr);
+        }
     }
 }
